@@ -1,0 +1,16 @@
+.profile-image {
+    border-radius: 50%;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 0.5px solid #e2e2e2;
+    width: 100%;
+}
+
+table tr td {
+    border: 0.5px solid #e2e2e2;
+    padding: 10px 10px;
+}

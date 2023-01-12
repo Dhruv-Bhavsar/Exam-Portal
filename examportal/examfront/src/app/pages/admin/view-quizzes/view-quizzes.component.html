@@ -1,0 +1,27 @@
+<mat-card class="mt10" *ngFor="let q of quizzes">
+
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{q.title}}</mat-card-title>
+        <mat-card-subtitle>{{q.description}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <!-- <p>Core Java, as the name suggests, is about the heart of the Java language, and excludes the many libraries available in the mature Java ecosystem. A developer with a very good understanding of Core Java can learn any Java-centered high-level framework (like Spring) or OS (like Android) with ease.</p> -->
+    </mat-card-content>
+
+    <mat-card-actions>
+
+        <button mat-raised-button color="primary" class="ml20" [routerLink]="'/admin/quiz/'+q.qid+'/'+q.title+'/'">Questions</button>
+        <button mat-stroked-button color="primary">Max Marks : {{q.maxMarks}}</button>
+        <button mat-stroked-button color="primary">Questions : {{q.numberOfQuestions}}</button>
+        <button mat-flat-button color="primary" [routerLink]="'/admin/quiz/' + q.qid">Update</button>
+        <button mat-flat-button color="primary" class="ml20">Attempts</button>
+        <button mat-raised-button color="warn" class="ml10" (click)="deleteQuiz(q.qid)">Delete</button>
+    </mat-card-actions>
+    
+
+</mat-card>
+
+<div class="container text-center mt20">
+    <button mat-raised-button color="primary" routerLink="/admin/add-quiz/">Add New Quiz</button>
+</div>

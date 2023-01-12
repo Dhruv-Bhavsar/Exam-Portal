@@ -1,0 +1,63 @@
+<mat-card *ngIf="user">
+
+    <mat-card-content>
+
+    
+    <h1>Your Profile Details</h1>
+
+    <div class="bootstrap-wrapper">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-10 offset-md-1">
+
+                    <div class="container text-center">
+
+                        <img class="profile-image mb20" src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg" alt="">
+
+                        <h1>{{user.firstName}} {{user.lastName}}</h1>
+                    </div>
+
+
+                    <div class="container text-center">
+                        <table>
+
+                            <tr>
+                                <td>Username</td>
+                                <td>{{user.username}}</td>
+                            </tr>
+                            <tr>
+                                <td>Id</td>
+                                <td>EXAM{{user.id}}</td>
+                            </tr>
+                            <tr *ngIf="user.phone">
+                                <td>Phone</td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>ROLE</td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Status</td>
+                                <td>{{user.enabled?"ACTIVE":"IN-ACTIVE"}}</td>
+                            </tr>
+                            
+                            
+                            
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card-content>
+<mat-card-actions class="text-center">
+    <button mat-raised-button color="primary">UPDATE</button>
+    <button mat-raised-button color="accent">SHARE</button>
+</mat-card-actions>
+</mat-card>
